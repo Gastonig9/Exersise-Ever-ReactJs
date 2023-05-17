@@ -1,0 +1,21 @@
+.container-ex {
+    background-color: white;
+    width: 85%;
+    margin: auto;
+    border: 2px solid black;
+    color: black;
+    padding: 20px;
+    box-shadow: -20px 15px 10px rgb(104, 8, 8);
+}
+
+.ex-description {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ex-description:hover {
+    background-color: rgb(241, 228, 228);
+}

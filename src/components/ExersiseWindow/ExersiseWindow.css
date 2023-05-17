@@ -1,0 +1,24 @@
+.title-ex {
+    color: brown;
+}
+
+.img-ex {
+    width: 22vw;
+    margin-bottom: 10px;
+}
+
+.button-ex {
+    width: 25%;
+    font-family: 'Secular One', sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: brown;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.button-ex:hover {
+    background-color: brown ;
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+}

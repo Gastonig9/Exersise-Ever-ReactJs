@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(144, 48, 48);
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.button-add-contain {
+    width: 50%;
+    margin: auto;
+    background-color: rgb(132, 46, 46);
+    border: 2px solid black;
+    border-radius: 20px;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.button-add-contain:hover {
+    cursor: pointer;
+    background-color: black;
+    transform: scale(1.1);
+}
+
+.close-button {
+    color: rgb(154, 54, 54);
+    margin-left: 40em;
+    width: 4vw;
+    height: 5vh;
+}
+
+.close-button:hover {
+    transform: scale(0.9);
+}

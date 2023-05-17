@@ -1,0 +1,15 @@
+.card-contain {
+    width: 50%;
+    background-color: rgb(138, 42, 42);
+    color: white;
+    padding: 100px;
+}
+
+.card-contain .img-top {
+    width: 8vw;
+    margin-bottom: 10px;
+}
+
+.card-contain .img-bottom {
+    width: 8vw;
+}

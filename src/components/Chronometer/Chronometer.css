@@ -1,0 +1,6 @@
+.chronometer-contain {
+    width: 40%;
+    margin: auto;
+    background-color: brown;
+    border: 5px solid rgb(212, 255, 0);
+}

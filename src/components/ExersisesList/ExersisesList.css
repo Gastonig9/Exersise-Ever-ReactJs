@@ -1,0 +1,59 @@
+.alert-container {
+    position: fixed;
+    height: 700px;
+    overflow-y: scroll;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.alert-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.exercise-card {
+    width: 40%;
+    background-color: brown;
+    color: white;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.exercise-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.exercise-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.exercise-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.img-card {
+    width: 25vw;
+    height: 25vh;
+}
