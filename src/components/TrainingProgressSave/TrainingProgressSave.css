@@ -1,0 +1,9 @@
+.progress-contain {
+    width: 80%;
+}
+
+.progress {
+    width: 80%;
+    margin-bottom: 10px;
+    height: 37px;
+}

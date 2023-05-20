@@ -10,6 +10,7 @@
     border-radius: 20px;
     scrollbar-width: thin;
     scrollbar-color: rgb(215, 13, 13) rgb(239, 6, 6);
+    z-index: 9999;
   }
   
   .alert-contain::-webkit-scrollbar {
@@ -68,4 +69,22 @@
     border: 5px solid brown;
     text-align: start;
     border-radius: 35px;
+}
+
+.alert-button {
+  width: 10%;
+  font-family: 'Secular One', sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: brown;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+
+.alert-button:hover {
+  background-color: brown ;
+  color: rgb(255, 255, 255);
+  transform: scale(1.1);
 }

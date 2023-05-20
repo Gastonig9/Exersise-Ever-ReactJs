@@ -37,13 +37,13 @@ function Chronometer(props) {
   }, [props.isActive, hours, seconds, minutes, setTotalTime, startTime]);
   
 
-  useEffect(() => {
-    if (props.reset) {
-      setSeconds(0);
-      setMinutes(0);
-      setHours(0);
-    }
-  }, [props.reset]);
+  // useEffect(() => {
+  //   if (props.reset) {
+  //     setSeconds(0);
+  //     setMinutes(0);
+  //     setHours(0);
+  //   }
+  // }, [props.reset]);
 
   return (
     <div className="chronometer-contain">

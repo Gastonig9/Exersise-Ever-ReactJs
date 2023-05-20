@@ -9,6 +9,7 @@ export default function ExersisesList(props) {
     const [check, setCheck] = useState(false)
     const { exersiseArray, setExersiseArray } = useContext(exersiseContext)
     const [isDisabled, setIsDisabled] = useState(false);
+    const [sound, setsound] = useState(false)
 
 
     useEffect(() => {
@@ -19,26 +20,34 @@ export default function ExersisesList(props) {
     }, [setExersise])
 
     useEffect(() => {
-        if (exersiseArray.length > 3) {
+        if (exersiseArray.length > 5) {
             setIsDisabled(true);
         } else {
             setIsDisabled(false);
         }
     }, [exersiseArray])
 
+    useEffect(() => {
+        if (sound) {
+            let audio = new Audio()
+            audio.src = require("../../assets/audioNotification.mp3")
+            audio.play()
+        }
+    }, )
+
+
     const handleSend = (id) => {
         getExersiseIndividualFB(id).then(responseId => {
-          setExersiseArray(prevArray => [...prevArray, responseId]);
-          console.log(exersiseArray)
-        })
-      }
+            setExersiseArray(prevArray => [...prevArray, responseId]);
+            localStorage.setItem("last-exersise", JSON.stringify(responseId));
+        });
+        setsound(true)
+    };
+
 
     return (
         <div className="alert-container">
             <button onClick={props.handleCloseAlert} className="close-button">Close</button>
-            <div className="alert-title">
-                List of exercises
-            </div>
             {check ?
                 exercise.map(element => {
                     return (

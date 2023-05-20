@@ -1,0 +1,18 @@
+.description-contain {
+    width: 75%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.description-contain h1 {
+    font-family: 'Bungee Inline', cursive;
+    color: rgb(6, 6, 6);
+}
+
+.description-contain p {
+    color: rgb(6, 6, 6);
+    font-family: 'Bungee Inline', cursive;
+    font-size: 15px;
+}

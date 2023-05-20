@@ -3,20 +3,20 @@ import React, { useContext, useState } from "react";
 import { exersiseContext } from "../../context/contextFile";
 import DescriptionWindow from "../DescriptionWindow/DescriptionWindow";
 import ExersiseWindow from "../ExersiseWindow/ExersiseWindow";
+import Chronometer from "../Chronometer/Chronometer";
+
 
 export default function ExersiseContain() {
     const [showWindow, setShowWindow] = useState(false);
-    const { exersiseArray } = useContext(exersiseContext);
-    const [currentExersise, setCurrentExersise] = useState(0)
+    const { exersiseArray, isRunning } = useContext(exersiseContext);
+    const [currentExersise, setCurrentExersise] = useState(0);
 
     const handleExerciseWindow = () => {
         setShowWindow(false);
-        console.log("Estas en la ventana de ejercicio");
     };
 
     const handleDescriptionWindow = () => {
         setShowWindow(true);
-        console.log("Estas en la ventana de descripcion");
     };
 
     return (
@@ -33,20 +33,33 @@ export default function ExersiseContain() {
 
                 {showWindow ? (
                     exersiseArray.length ? (
-                        <DescriptionWindow description={exersiseArray[currentExersise].description} />
+                        <DescriptionWindow 
+                        description={exersiseArray[currentExersise].description} 
+                        nameDescription={exersiseArray[currentExersise].name}
+                        musclegroup = {exersiseArray[currentExersise].muscleGroup} />
                     ) : (
-                        <p>No hay descripción disponible</p>
+                        <div className="error-contain">
+                            <img className="img-error" src="https://i.ibb.co/v4SBT2P/cancel.png" alt="error" />
+                            <h2>Nothing around here (for now)</h2>
+                            <p>Please add exercises to start</p>
+                        </div>
                     )
                 ) : exersiseArray.length ? (
-                    <ExersiseWindow 
-                    arrayExersises = {exersiseArray}
-                    cExersise = {currentExersise}
-                    setcExersise = {setCurrentExersise}
-                    name={exersiseArray[currentExersise].name} 
-                    img={exersiseArray[currentExersise].img} />
+                    <ExersiseWindow
+                        arrayExersises={exersiseArray}
+                        cExersise={currentExersise}
+                        setcExersise={setCurrentExersise}
+                        name={exersiseArray[currentExersise].name}
+                        img={exersiseArray[currentExersise].img}
+                        next={exersiseArray[currentExersise + 1] ? exersiseArray[currentExersise + 1].img : null}/>
                 ) : (
-                    <p>No hay ejercicio disponible</p>
+                    <div className="error-contain">
+                        <img className="img-error" src="https://i.ibb.co/v4SBT2P/cancel.png" alt="error" />
+                        <h2>No exercises available</h2>
+                        <p>Please add exercises to start</p>
+                    </div>
                 )}
+                <Chronometer isActive={isRunning} />
             </div>
         </>
     );

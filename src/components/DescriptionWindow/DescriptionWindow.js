@@ -1,9 +1,14 @@
-
+import "./DescriptionWindow.css"
 export default function DescriptionWindow(props) {
+
     return (
         <>
-            <h1>Description:</h1>
-            <p>{props.description}</p>
+            <div className="description-contain">
+                <h1>{props.nameDescription}</h1>
+                <h5 className="text-danger">Muscle group: {props.musclegroup}</h5>
+                <hr/>
+                <p>{props.description}</p>
+            </div>
         </>
     )
 }

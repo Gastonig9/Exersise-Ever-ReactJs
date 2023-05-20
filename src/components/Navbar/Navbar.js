@@ -24,7 +24,7 @@ export default function Navbar() {
                             </li>
                         </Link>
                         <li className="nav-item">
-                            <a className="nav-link" href="caneat.html">¿Puedo comerlo?</a>
+                            <a className="nav-link" href="caneat.html">Can Eat</a>
                         </li>
                     </ul>
                 </div>
