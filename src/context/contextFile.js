@@ -8,6 +8,7 @@ function ExersiseProvider(props) {
     const [totalTime, setTotalTime] = useState(null)
     const [isFinishRoutine, setIsFinishRoutine] = useState(false)
     const [isRunning, setIsRunning] = useState(false);
+    const [todayTraining, setTodayTraining] = useState(false)
 
   return (
     <Provider value={{ exersiseArray, 
@@ -17,7 +18,9 @@ function ExersiseProvider(props) {
      isFinishRoutine, 
      setIsFinishRoutine, 
      isRunning, 
-     setIsRunning  }}>
+     setIsRunning,
+     todayTraining,
+     setTodayTraining }}>
       {props.children}
     </Provider>
   );

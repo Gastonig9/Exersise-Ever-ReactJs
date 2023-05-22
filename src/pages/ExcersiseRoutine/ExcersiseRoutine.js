@@ -49,7 +49,6 @@ export default function ExcersiseRoutine() {
                             <h1 className="title-info">Progress</h1>
                             <TrainingProgressSave />
                         </div>
-
                     </div>
                 </>
             }

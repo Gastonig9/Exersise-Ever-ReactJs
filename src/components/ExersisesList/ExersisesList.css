@@ -32,6 +32,7 @@
     border: 2px solid black;
     padding: 10px;
     margin: 10px;
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -56,4 +57,19 @@
 .img-card {
     width: 25vw;
     height: 25vh;
+}
+
+.contain-menu {
+    position: absolute;
+    top: 40px;
+}
+
+.muscle-selector {
+    padding: 10px;
+}
+
+.muscle-selector:hover {
+    cursor: pointer;
+    background-color: brown;
+    color: black;
 }

@@ -23,9 +23,11 @@ export default function Navbar() {
                                 <a className="nav-link active" aria-current="page" href="/begin">Begin</a>
                             </li>
                         </Link>
+                        <Link to="/caneat">
                         <li className="nav-item">
-                            <a className="nav-link" href="caneat.html">Can Eat</a>
+                            <a className="nav-link" href="/caneat">Can Eat</a>
                         </li>
+                        </Link>
                     </ul>
                 </div>
             </div>

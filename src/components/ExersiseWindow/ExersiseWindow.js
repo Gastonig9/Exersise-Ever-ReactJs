@@ -5,9 +5,11 @@ import { exersiseContext } from "../../context/contextFile";
 
 export default function ExersiseWindow(props) {
   const [isFinish, setisFinish] = useState(false);
-  const { totalTime, setIsFinishRoutine, setIsRunning, isRunning } = useContext(
-    exersiseContext
-  );
+  const { totalTime,
+    setIsFinishRoutine,
+    setIsRunning,
+    isRunning,
+    setTodayTraining } = useContext(exersiseContext);
   const [sound, setsound] = useState(false)
 
   const handleNextClick = () => {
@@ -23,6 +25,7 @@ export default function ExersiseWindow(props) {
     setIsRunning(false);
     setisFinish(true);
     setIsFinishRoutine(true);
+    setTodayTraining(true)
   };
 
   useEffect(() => {

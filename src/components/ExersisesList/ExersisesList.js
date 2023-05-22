@@ -10,7 +10,7 @@ export default function ExersisesList(props) {
     const { exersiseArray, setExersiseArray } = useContext(exersiseContext)
     const [isDisabled, setIsDisabled] = useState(false);
     const [sound, setsound] = useState(false)
-
+    const [selectedMuscle, setSelectedMuscle] = useState("All");
 
     useEffect(() => {
         getExersisesFB().then(response => {
@@ -33,8 +33,7 @@ export default function ExersisesList(props) {
             audio.src = require("../../assets/audioNotification.mp3")
             audio.play()
         }
-    }, )
-
+    })
 
     const handleSend = (id) => {
         getExersiseIndividualFB(id).then(responseId => {
@@ -44,30 +43,51 @@ export default function ExersisesList(props) {
         setsound(true)
     };
 
+    const handleMuscleClick = (muscle) => {
+        setSelectedMuscle(muscle);
+    };
 
     return (
         <div className="alert-container">
             <button onClick={props.handleCloseAlert} className="close-button">Close</button>
+            <div className="contain-menu">
+                <div class="btn-group">
+                    <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Excersise
+                    </button>
+                    <ul class="dropdown-menu p-2">
+                        <li className="muscle-selector" onClick={() => handleMuscleClick("All")}>All</li>
+                        <li className="muscle-selector" onClick={() => handleMuscleClick("Abdomen")}>Abdomen</li>
+                        <li className="muscle-selector" onClick={() => handleMuscleClick("Legs")}>Legs</li>
+                        <li className="muscle-selector" onClick={() => handleMuscleClick("Shoulders")}>Shoulders</li>
+                        <li className="muscle-selector" onClick={() => handleMuscleClick("Back")}>Back</li>
+                        <li className="muscle-selector" onClick={() => handleMuscleClick("Chest")}>Chest</li>
+                        <li className="muscle-selector" onClick={() => handleMuscleClick("Arms")}>Arms</li>
+                    </ul>
+                </div>
+            </div>
             {check ?
-                exercise.map(element => {
-                    return (
-                        <>
-                            <div className="exercise-card">
-                                <img className="img-card" src={element.img} alt="Push-ups" />
-                                <h3>{element.name}</h3>
-                                <p>{element.description}</p>
-                                <button onClick={() => handleSend(element.id)} disabled={isDisabled} className="btn btn-dark text-light w-50">Add</button>
-                            </div>
-                        </>
-                    )
-                })
+                exercise.filter((element) =>
+                    selectedMuscle === "All" ? true : element.muscleGroup === selectedMuscle
+                )
+                    .map((element) => {
+                        return (
+                            <>
+                                <div className="exercise-card">
+                                    <img className="img-card" src={element.img} alt="Push-ups" />
+                                    <h3>{element.name}</h3>
+                                    <p>{element.description}</p>
+                                    <button onClick={() => handleSend(element.id)} disabled={isDisabled} className="btn btn-dark text-light w-50">Add</button>
+                                </div>
+                            </>
+                        )
+                    })
                 :
                 <>
-                    <h1 className="text-danger animate__animated animate__pulse animate__infinite infinite">Loading exersises...</h1>
+                    <h1 className="text-danger animate__animated animate__pulse animate__infinite infinite">Loading exercises...</h1>
                 </>
             }
-
         </div>
-
     )
 }
+

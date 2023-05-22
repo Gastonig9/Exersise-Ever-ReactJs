@@ -107,7 +107,10 @@ export default function TrainingProgressSave(props) {
             </div>
             <div className="text-light w-25">
                 <h3 className="">Average today</h3>
-                <h4 className="text-success">{average}</h4>
+                {average < 35 ? <h4 className="text-success">{average}</h4> : 
+                 average < 45 ? <h4 className="text-warning">{average}</h4> : 
+                <h4 className="text-danger">{average}</h4> }
+                
                 <hr />
                 <h5>In the last routine..</h5>
                 {lastExersiseLS ? (
@@ -116,7 +119,6 @@ export default function TrainingProgressSave(props) {
                     <p>No last exercise found</p>
                 )}
             </div>
-
         </>
     );
 }
